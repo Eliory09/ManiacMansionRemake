@@ -5,7 +5,58 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Game.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Game/Scenes/OpeningCutscene.unity
+    guid: 5108e06c7e02e47b9a4678f6e4bbebce
+  - enabled: 1
+    path: Assets/Game/Scenes/ManiacMansionLogo.unity
+    guid: c3fa47b6db5a4417099766a98b4d9180
+  - enabled: 1
+    path: Assets/Game/Scenes/RoadStart.unity
+    guid: f28381490098d490389937cbed79b520
+  - enabled: 1
+    path: Assets/Game/Scenes/Road.unity
+    guid: 6075d414b88e9449aa6aa652058726c7
+  - enabled: 1
+    path: Assets/Game/Scenes/MansionEntrance.unity
+    guid: 48710ece7f1404d768ff6d1b3c87624e
+  - enabled: 1
+    path: Assets/Game/Scenes/MansionMainHall.unity
+    guid: d92a5701514e44214950de6d50a91d7b
+  - enabled: 1
+    path: Assets/Game/Scenes/Kitchen.unity
+    guid: 44d8ae59011e84b8baf08511f5da155e
+  - enabled: 1
+    path: Assets/Game/Scenes/DiningRoom.unity
+    guid: 14112c77c60a1430f92d8d5f2df65f51
+  - enabled: 1
+    path: Assets/Game/Scenes/Pantry.unity
+    guid: bbb8c3b23ef644301afd617954339b4e
+  - enabled: 1
+    path: Assets/Game/Scenes/LivingRoom.unity
+    guid: 03014c8621f2c465a8c6c5365d640c0e
+  - enabled: 1
+    path: Assets/Game/Scenes/Library.unity
+    guid: 6fa8baaf3de9549568f33c0c08c8c0db
+  - enabled: 1
+    path: Assets/Game/Scenes/HallSecondFloor.unity
+    guid: a6e8a8c83f4114fff9dbf2475a33ef46
+  - enabled: 1
+    path: Assets/Game/Scenes/PaintingRoom.unity
+    guid: 4f697a24ed7674af89a34d0e2c0b9431
+  - enabled: 1
+    path: Assets/Game/Scenes/SoundRoom.unity
+    guid: 0700de5ddfebc46d58bdbdf66ba234a2
+  - enabled: 1
+    path: Assets/Game/Scenes/BlueHallway.unity
+    guid: 6c629ff87789842d397a9386b25e57d6
+  - enabled: 1
+    path: Assets/Game/Scenes/3rdFloor.unity
+    guid: e3d0a3a357e0c45c2bcbef55e1479f5d
+  - enabled: 1
+    path: Assets/Game/Scenes/EdinsonKidHungryScene.unity
+    guid: e10deb75957b34bdeadf68e14e92fc4e
   m_configObjects: {}

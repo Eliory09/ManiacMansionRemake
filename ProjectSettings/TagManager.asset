@@ -3,15 +3,24 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Interactable
+  - Consumable
+  - Background
+  - CommandText
+  - Door
+  - PlayerText
+  - UI Inventory
+  - ProgressReset
+  - Loader
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Background
   - Water
   - UI
-  - 
+  - Interactables
   - 
   - 
   - 
@@ -38,6 +47,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1398433577
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
