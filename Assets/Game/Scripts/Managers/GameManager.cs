@@ -71,7 +71,6 @@ public class GameManager : MonoBehaviour
             _shared._timeToActivateEdinsonScene -= Time.deltaTime;
             if (_shared._seconds - (int) _shared._timeToActivateEdinsonScene >= 1)
             {
-                print(_shared._seconds);
                 _shared._seconds = (int) _shared._timeToActivateEdinsonScene - 1;
             }
             if (_shared._timeToActivateEdinsonScene <= 0)

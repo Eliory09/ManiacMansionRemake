@@ -13,6 +13,7 @@ TagManager:
   - UI Inventory
   - ProgressReset
   - Loader
+  - NPC
   layers:
   - Default
   - TransparentFX
