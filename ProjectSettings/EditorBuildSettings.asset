@@ -39,7 +39,7 @@ EditorBuildSettings:
     path: Assets/Game/Scenes/LivingRoom.unity
     guid: 03014c8621f2c465a8c6c5365d640c0e
   - enabled: 1
-    path: Assets/Game/Scenes/Library.unity
+    path: Assets/Game/Scenes/LibraryRoom.unity
     guid: 6fa8baaf3de9549568f33c0c08c8c0db
   - enabled: 1
     path: Assets/Game/Scenes/HallSecondFloor.unity
