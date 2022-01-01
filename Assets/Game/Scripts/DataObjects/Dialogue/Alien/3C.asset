@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 862e303d914c340ada6538147022fed9, type: 3}
+  m_Name: 3C
+  m_EditorClassIdentifier: 
+  charName: Razor
+  charImage: {fileID: 21300000, guid: b9ac9a527619849ddab02668585e78e9, type: 3}
+  sentence: 
+  next: {fileID: 0}
+  choices:
+  - sentence: No, I'm here to rescue my friend Sandy
+    node: {fileID: 11400000, guid: 5555905cddf324082a0374293778dbc1, type: 2}
+  - sentence: Yes, of course. Lord meteor sent me here for an important mission.
+    node: {fileID: 11400000, guid: 4c444eedb9e6a49079e19b03968d1254, type: 2}

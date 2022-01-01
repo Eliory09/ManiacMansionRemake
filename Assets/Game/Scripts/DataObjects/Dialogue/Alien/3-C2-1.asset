@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdc046160e48d443481e3c0e1605419f, type: 3}
-  m_Name: 3
+  m_Name: 3-C2-1
   m_EditorClassIdentifier: 
   charName: Alien
   charImage: {fileID: 21300000, guid: cbdd00f8ab613469f91fa418ac79d257, type: 3}
-  sentence: What are you doing here? Are you a friend of the meteor?
-  next: {fileID: 11400000, guid: 789c26f05709c4437ab8c66ff0ddea9f, type: 2}
+  sentence: Really? Well, if the meteor wanted you to come, who am I to disagree?
+  next: {fileID: 11400000, guid: 168090e318b064c389da3e0a2e022063, type: 2}

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "new Dialogue Line")]
 public class DialogueNode: ScriptableObject
@@ -12,4 +13,9 @@ public class DialogueNode: ScriptableObject
     public string sentence;
 
     public DialogueNode next;
+
+    public string GetSentence()
+    {
+        return sentence;
+    }
 }

@@ -4,6 +4,7 @@ using System.Timers;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 using Timer = System.Timers.Timer;
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
     private ItemUI _interactionItem;
     private bool _isFreeze;
     private int _seconds;
+    private NavMeshSurface2d _surface;
 
     #endregion
 
@@ -100,7 +102,6 @@ public class GameManager : MonoBehaviour
 
     public static void SetTimerForEdinsonMove()
     {
-        print("Entered");
         _shared._timeToActivateEdinsonScene = Random.Range(120, 360);
         _shared._isEdinsonTimerOn = true;
         _shared._seconds = (int) _shared._timeToActivateEdinsonScene;
@@ -232,11 +233,23 @@ public class GameManager : MonoBehaviour
             _shared._currentMusic = _shared.dangerMusic;
         }
     }
+
+    public static void FreezeSceneInDialogue()
+    {
+        _shared._surface = GameObject.FindWithTag("NavMesh").GetComponent<NavMeshSurface2d>();
+        _shared._surface.enabled = false;
+        // ItemsUIManager.SetDisable();
+    }
+    
+    public static void UnfreezeSceneInDialogue()
+    {
+        _shared._surface.enabled = true;
+        // ItemsUIManager.SetEnable();
+    }
     
     private static void ActivateEdinsonScene()
     {
         SceneLoader loader = GameObject.FindWithTag("Loader").GetComponent<SceneLoader>();
-        print("Hey!");
         _shared._isEdinsonTimerOn = false;
         loader.LoadSceneAdditive(16);
     }

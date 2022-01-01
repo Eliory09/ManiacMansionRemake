@@ -9,9 +9,9 @@ public class DontDestroy : MonoBehaviour
 {
     private void Awake()
     {
-        var objs = GameObject.FindGameObjectsWithTag("GameController");
+        var obj = GameObject.FindGameObjectsWithTag(tag);
 
-        if (objs.Length > 6)
+        if (obj.Length > 1)
         {
             Destroy(gameObject);
         }
