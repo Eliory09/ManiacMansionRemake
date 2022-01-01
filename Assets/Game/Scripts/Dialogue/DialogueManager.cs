@@ -51,14 +51,15 @@ public class DialogueManager : MonoBehaviour
         }
 
         _shared.nameText.text = _shared._currentDialogueNode.charName;
-        _shared.dialogueText.text = _shared._currentDialogueNode.sentence;
+        // _shared.dialogueText.text = _shared._currentDialogueNode.sentence;
+        CoroutineController.StopAll();
+        CoroutineController.Start(TypeSentence(_shared._currentDialogueNode.sentence));
         _shared.charImage.sprite = _shared._currentDialogueNode.charImage;
         if (_shared._currentDialogueNode is DialogueChoicesNode currNode)
         {
             foreach (var choice in currNode.choices)
             {
                 Button button = Instantiate(_shared.choiceButton, Vector3.zero, Quaternion.identity);
-                print(button.GetType());
                 _shared.choiceButtons.Add(button);
                 button.GetComponentInChildren<TextMeshProUGUI>().text = choice.sentence;
                 button.transform.SetParent(_shared.choicesFrame.transform, false);
@@ -83,7 +84,6 @@ public class DialogueManager : MonoBehaviour
         GameManager.UnfreezeSceneInDialogue();
         _shared.bgAnimator.SetBool(IsOpen, false);
         CoroutineController.Start(DisableBG(0.25f));
-        Debug.Log("End of conversation");
     }
 
     public static void MakeChoice(DialogueChoicesNode.Choice choice)
@@ -101,5 +101,15 @@ public class DialogueManager : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
         _shared.background.gameObject.SetActive(false);
+    }
+
+    private static IEnumerator TypeSentence(string sentence)
+    {
+        _shared.dialogueText.text = "";
+        foreach (var letter in sentence.ToCharArray())
+        {
+            _shared.dialogueText.text += letter;
+            yield return null;
+        }
     }
 }
