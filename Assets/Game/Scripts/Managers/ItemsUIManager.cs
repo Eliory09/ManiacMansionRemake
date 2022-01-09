@@ -33,6 +33,7 @@ public class ItemsUIManager : MonoBehaviour
 
     private void Start()
     {
+        ControlGame.AddManager(gameObject);
         _shared._page = 0;
         _shared._totalPages = ((Inventory.GetItems().Count) / 4) + 1;
         UpdateItemsUI();
@@ -94,6 +95,11 @@ public class ItemsUIManager : MonoBehaviour
         _shared.gameObject.SetActive(true);
     }
 
-
+    public static void DestroyMe()
+    {
+        Destroy(_shared.gameObject);
+    }
+    
+    
     #endregion
 }

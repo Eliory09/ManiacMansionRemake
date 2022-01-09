@@ -1,22 +1,24 @@
-using System;
 using System.Collections.Generic;
-using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Serialization;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 
-public class Tentacle : MonoBehaviour
+/// <summary>
+/// Handles the tentacle actions in the 3rd floor.
+/// </summary>
+public class Tentacle : MonoBehaviour, NPC
 {
-    public enum TentacleStatus
+    #region Fields
+
+    private enum TentacleStatus
     {
         Hungry,
         Thirsty,
         Fine
     }
-    
-    public static TentacleStatus Status = TentacleStatus.Hungry;
+
+    private static TentacleStatus Status = TentacleStatus.Hungry;
 
     [SerializeField] private Vector3 stopFollowingPosition;
     [SerializeField] private Player player;
@@ -25,6 +27,8 @@ public class Tentacle : MonoBehaviour
     [SerializeField] private float speed = 1;
     [SerializeField] private NavMeshSurface2d surface;
     [SerializeField] private GameObject obstacle;
+    [SerializeField] private GameStatus status;
+
 
     private Vector3 _followLocation;
     private bool _isFollowing = true;
@@ -33,6 +37,9 @@ public class Tentacle : MonoBehaviour
     private HashSet<int> drinksIds = new HashSet<int>() {18, 24};
     private int _waxFruitId = 33;
 
+    #endregion
+
+    #region MonoBehaviour
 
     private void Awake()
     {
@@ -41,10 +48,16 @@ public class Tentacle : MonoBehaviour
             EnableWalk();
             Destroy(gameObject);
         }
+
+        else
+        {
+            Activate();
+        }
     }
 
     private void Start()
     {
+        surface.UpdateNavMesh(surface.navMeshData);
         GameManager.SetDangerMusic();
     }
 
@@ -65,14 +78,31 @@ public class Tentacle : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, playerLoc, Time.deltaTime * speed);
         UpdateAnimation(new Vector2(playerLoc.x, playerLoc.y));
-
-        
     }
 
+    #endregion
+
+
+    #region Methods
+    
+    public void Activate()
+    {
+        AddToGameStatus();
+    }
+
+    public void Reset()
+    {
+        Status = TentacleStatus.Hungry;
+    }
+
+    public void AddToGameStatus()
+    {
+        status.AddNPC(this);
+    }
+    
     private void StopFollowing()
     {
         _isFollowing = false;
-        
     }
     
     private void UpdateAnimation(Vector2 followSpot)
@@ -131,4 +161,6 @@ public class Tentacle : MonoBehaviour
         surface.UpdateNavMesh(surface.navMeshData);
         GameManager.SetDefaultMusic();
     }
+
+    #endregion
 }

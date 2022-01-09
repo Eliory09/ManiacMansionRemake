@@ -580,6 +580,10 @@ MonoBehaviour:
   choice:
     sentence: 
     node: {fileID: 0}
+    isExtended: 0
+  event:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8461035129698354464
 GameObject:
   m_ObjectHideFlags: 0

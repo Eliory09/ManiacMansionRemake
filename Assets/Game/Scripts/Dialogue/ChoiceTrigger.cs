@@ -1,7 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
+/// <summary>
+/// ChoiceTrigger used to set and make choices of the player
+/// throughout the game during dialogues.  
+/// </summary>
 public class ChoiceTrigger : MonoBehaviour
 {
     public DialogueChoicesNode.Choice choice;

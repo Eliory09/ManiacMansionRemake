@@ -1,7 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Triggers the NPC dialogue.
+/// </summary>
 public class NPCDialogueTrigger : MonoBehaviour
 {
     public DialogueNode firstDialogueNode;

@@ -1,17 +1,15 @@
 using System;
 using System.Collections.Generic;
-using System.Timers;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
-using Timer = System.Timers.Timer;
 
 
 /// <summary>
-/// Game Manager. Controlls main interaction options of the user with the game.
+/// Game Manager. Controls main interaction options of the user with the game.
 /// </summary>
 public class GameManager : MonoBehaviour
 {
@@ -50,8 +48,12 @@ public class GameManager : MonoBehaviour
         {
             _shared = this;
             _shared._command = Command.None;
-            _shared._player = GameObject.FindWithTag("Player").GetComponent<Player>();
-            _shared._commandText = GameObject.FindWithTag("CommandText").GetComponent<TextMeshProUGUI>();
+            GameObject player = GameObject.FindWithTag("Player");
+            if (player)
+                _shared._player = player.GetComponent<Player>();
+            GameObject commandText = GameObject.FindWithTag("CommandText");
+            if (commandText)
+                _shared._commandText = commandText.GetComponent<TextMeshProUGUI>();
             SceneManager.sceneLoaded -= OnSceneLoaded;
             SceneManager.sceneLoaded += OnSceneLoaded;
             ResetInteraction();
@@ -63,6 +65,11 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         
+    }
+
+    private void Start()
+    {
+        ControlGame.AddManager(gameObject);
     }
 
     private void Update()
@@ -102,7 +109,7 @@ public class GameManager : MonoBehaviour
 
     public static void SetTimerForEdinsonMove()
     {
-        _shared._timeToActivateEdinsonScene = Random.Range(120, 360);
+        _shared._timeToActivateEdinsonScene = Random.Range(300, 360);
         _shared._isEdinsonTimerOn = true;
         _shared._seconds = (int) _shared._timeToActivateEdinsonScene;
     }
@@ -238,23 +245,22 @@ public class GameManager : MonoBehaviour
     {
         _shared._surface = GameObject.FindWithTag("NavMesh").GetComponent<NavMeshSurface2d>();
         _shared._surface.enabled = false;
-        // ItemsUIManager.SetDisable();
     }
     
     public static void UnfreezeSceneInDialogue()
     {
         _shared._surface.enabled = true;
-        // ItemsUIManager.SetEnable();
     }
-    
+
     private static void ActivateEdinsonScene()
     {
         SceneLoader loader = GameObject.FindWithTag("Loader").GetComponent<SceneLoader>();
         _shared._isEdinsonTimerOn = false;
-        loader.LoadSceneAdditive(16);
+        FreezeSceneInDialogue();
+        loader.LoadSceneAdditive(17);
     }
 
-    public static void UnFreeze()
+    public static void UnFreezeEdinsonsScene()
     {
         _shared._isFreeze = false;
         ItemsUIManager.SetEnable();
@@ -357,6 +363,11 @@ public class GameManager : MonoBehaviour
             if (Camera.main is { }) Camera.main.gameObject.transform.position = _nextCameraPosition;
             _changeLocation = false;
         }
+    }
+    
+    public static void DestroyMe()
+    {
+        Destroy(_shared.gameObject);
     }
 
     #endregion

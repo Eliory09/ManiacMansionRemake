@@ -2,18 +2,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
-///   Activates room light once it turned on.
+///   Activates dark room light once it the light switch is turned on.
 /// </summary>
 public class LightRoom : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer[] renderers;
-    private static bool _isActivated = false;
+    private static HashSet<int> _litSceneIndexes = new HashSet<int>();
 
     private void Awake()
     {
-        if (_isActivated) return;
+        if (_litSceneIndexes.Contains(SceneManager.GetActiveScene().buildIndex)) return;
         foreach (var spriteRenderer in renderers)
         {
             spriteRenderer.color =
@@ -28,6 +29,6 @@ public class LightRoom : MonoBehaviour
             spriteRenderer.color = Color.white;
         }
 
-        _isActivated = true;
+        _litSceneIndexes.Add(SceneManager.GetActiveScene().buildIndex);
     }
 }

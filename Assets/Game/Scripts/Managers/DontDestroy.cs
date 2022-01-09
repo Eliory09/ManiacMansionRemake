@@ -3,7 +3,6 @@ using UnityEngine;
 
 /// <summary>
 /// Prevent destruction of object.
-/// CURRENTLY NOT IN USE.
 /// </summary>
 public class DontDestroy : MonoBehaviour
 {

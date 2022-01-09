@@ -55,7 +55,7 @@ public class InteractableNPC : MonoBehaviour
     /// <summary>
     ///   Activate the interactable object event.
     /// </summary>
-    public virtual void ActivateEvent()
+    protected virtual void ActivateEvent()
     {
         @event.Invoke();
     }
@@ -63,7 +63,7 @@ public class InteractableNPC : MonoBehaviour
     /// <summary>
     /// Activate the information event, which is triggered from the GameManager by the What is command.
     /// </summary>
-    public void ActivateInformation()
+    private void ActivateInformation()
     {
         information.Invoke();
     }

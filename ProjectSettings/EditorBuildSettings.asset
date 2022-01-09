@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/Game/Scenes/Instructions.unity
+    guid: cb0d0e4fc80e94f61a5a1ca5f7edc70e
+  - enabled: 1
     path: Assets/Game/Scenes/OpeningCutscene.unity
     guid: 5108e06c7e02e47b9a4678f6e4bbebce
   - enabled: 1
@@ -59,4 +62,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/EdinsonKidHungryScene.unity
     guid: e10deb75957b34bdeadf68e14e92fc4e
+  - enabled: 1
+    path: Assets/Game/Scenes/Dungeon.unity
+    guid: e97d183130cf948dc93914e0dd637155
+  - enabled: 1
+    path: Assets/Game/Scenes/ElectricityRoom.unity
+    guid: a70f47c1bf29c45bf91157d20d671aab
   m_configObjects: {}

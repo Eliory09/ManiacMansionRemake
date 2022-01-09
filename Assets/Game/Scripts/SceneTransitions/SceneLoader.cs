@@ -1,11 +1,10 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 
 /// <summary>
-/// Scene loader used to load scenes and activate a transition.
+/// Scene loader used to load scenes and activate a scene transition.
 /// </summary>
 public class SceneLoader : MonoBehaviour
 {
@@ -41,15 +40,11 @@ public class SceneLoader : MonoBehaviour
     
     private IEnumerator LoaderAdditive(int sceneIndex)
     {
-        transition.SetTrigger(SwitchRoom);
-
         yield return new WaitForSeconds(time);
         
         ItemsUIManager.SetDisable();
 
         SceneManager.LoadScene(sceneIndex, LoadSceneMode.Additive);
-        
-        transition.SetTrigger(EndTransition);
     }
 
     #endregion

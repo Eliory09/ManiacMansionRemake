@@ -1,8 +1,11 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
+
+/// <summary>
+/// Dialogue data objects.
+/// Stores information about the choice of the player and the DialogueNode
+/// that it leads to in the conversation.
+/// </summary>
 
 [CreateAssetMenu(fileName = "new Dialogue Choices Line")]
 public class DialogueChoicesNode : DialogueNode
