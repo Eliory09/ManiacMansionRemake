@@ -33,7 +33,7 @@ The application is currently built to support MacOS only, but can be built to su
 ## Screenshots
 <p align="center">
 <h3>Opening Cutscene:</h3>
-  <img src="blob:https://imgur.com/853660ca-d3df-4d4d-bd5d-45a8b7cc682a" />
+  <img src="https://i.imgur.com/eCgtHDZ.png" />
 <h3>Opening Cutscene:</h3>
   <img src="https://i.imgur.com/4J85BUo.png" />
 <h3>Dialogue System:</h3>
