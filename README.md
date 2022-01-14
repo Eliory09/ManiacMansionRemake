@@ -7,10 +7,8 @@
 
 ## Table Of Content
 - [Introduction](#introduction)
-- [Live](<https://riddlism.herokuapp.com> "Live View")
 - [Technologies](#technologies)
 - [Usage](#usage)
-- [Bugs](https://github.com/Eliory09/Riddlism/issues "Issues Page")
 - [Screenshots](#screenshots)
 
 ## Introduction
